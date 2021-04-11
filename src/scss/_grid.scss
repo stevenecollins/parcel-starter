@@ -1,0 +1,65 @@
+// breakpoints
+$breakpoints: (
+    "xl": 1440px,
+    "lg": 1024px,
+    "md": 767px,
+    "sm": 575px,
+    "xs": 425px,
+);
+
+$col-margin: 10px;
+
+@function calcWidth($n, $no-space: false) {
+    @if $no-space {
+        @return calc((#{$n} / 12 * 100%));
+    }
+    @else {
+        @return calc((#{$n} / 12 * 100%) - 2 * #{$col-margin});
+    }
+}
+
+.container-fluid {
+  width: 100%;
+  max-width:  100%;
+  margin: 0 auto;
+}
+
+.container {
+  width: 100%;
+  max-width:  1024px;
+  margin: 0 auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col {
+    flex-grow: 1;
+    max-width: 100%;
+    margin: 0 $col-margin $col-margin $col-margin;
+}
+
+@each $key, $value in $breakpoints {
+    @media screen and (max-width: $value) {
+        @for $i from 1 through 12 {
+            .col-#{$key}-#{$i} {
+                flex-grow: 0;
+                width: calcWidth($i);
+            }
+
+            .no-col-space > .col-#{$key}-#{$i} {
+                width: calcWidth($i, $no-space: true);
+                margin: 0 !important;
+            }
+
+        }
+    }
+}
+
+//For Demostration purposes
+.col{
+  background:#cfcfcf;
+  text-align:center;
+}

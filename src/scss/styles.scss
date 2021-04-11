@@ -1,0 +1,9 @@
+@use "grid.scss";
+@use "reset.scss";
+
+$steelblue: steelblue;
+
+body {
+	background: $steelblue;
+	color: white;
+}

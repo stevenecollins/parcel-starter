@@ -1,0 +1,30 @@
+# Dependency directories
+/node_modules
+
+#Build generated
+public/
+
+### Parcel ###
+.cache/
+
+### Node ###
+package-lock.json
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+### VisualStudioCode ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+### System Files ###
+.DS_Store
+
+### Sass ###
+.sass-cache/
+*.css.map
