@@ -1,9 +1,12 @@
-@use "grid.scss";
 @use "reset.scss";
+@use "grid.scss";
 
 $steelblue: steelblue;
 
 body {
 	background: $steelblue;
 	color: white;
+	font-size: 18px;
+	font-family: sans-serif;
+	padding: 20px;
 }
